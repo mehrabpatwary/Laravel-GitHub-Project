@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
@@ -55,6 +56,14 @@ Route::put('/reviewUpdate', [ReviewController::class, 'reviewUpdate'])->middlewa
 Route::get('/Login', [LoginController::class, 'loginIndex']);
 Route::post('/onLogin', [LoginController::class, 'onLogin']);
 Route::get('/onLogout', [LoginController::class, 'onLogout']);
+
+//Photo Gallery
+Route::get('/photo', [PhotoController::class, 'photoIndex'])->middleware('loginCheck');
+Route::post('/photoUpload', [PhotoController::class, 'photoUpload'])->middleware('loginCheck');
+Route::get('/photoJSON', [PhotoController::class, 'photoJSON'])->middleware('loginCheck');
+Route::get('/photoJSONId/{id}', [PhotoController::class, 'photoJSONId'])->middleware('loginCheck');
+Route::post('/photoDelete', [PhotoController::class, 'photoDelete'])->middleware('loginCheck');
+
 
 
 

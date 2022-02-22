@@ -1,5 +1,5 @@
 @extends('Layout.app')
-
+@section('title', 'Contact')
 @section('content')
     {{--Contact data section--}}
     <div id="mainDiv" class="container d-none">

@@ -1,5 +1,5 @@
 @extends('Layout.app')
-
+@section('title', 'Courses')
 @section('content')
 
 {{--    Courses data section--}}
